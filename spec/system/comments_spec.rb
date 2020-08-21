@@ -8,7 +8,7 @@ RSpec.describe 'コメント投稿', type: :system do
 
   it 'ログインしたユーザーはツイート詳細ページでコメント投稿できる' do
     # ログインする
-    sign_in(@user)
+    sign_in(@tweet.user)
     # ツイート詳細ページに遷移する
     visit tweet_path(@tweet)
     # フォームに情報を入力する

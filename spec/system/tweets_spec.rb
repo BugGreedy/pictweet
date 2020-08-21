@@ -94,7 +94,7 @@ RSpec.describe 'ツイート編集', type: :system do
   context 'ツイート編集ができないとき' do
    it 'ログインしたユーザーは自分以外が投稿したツイートの編集画面には遷移できない' do
     # ツイート1を投稿したユーザーでログインする
-    sign_in(@user)
+    sign_in(@tweet1.user)
     # ツイート2に「編集」ボタンがないことを確認する
     expect(
       all(".more")[0].hover
@@ -124,7 +124,7 @@ RSpec.describe 'ツイート削除', type: :system do
   context 'ツイート削除ができるとき' do
       it 'ログインしたユーザーは自らが投稿したツイートの削除ができる' do
         # ツイート1を投稿したユーザーでログインする
-        sign_in(@user)
+        sign_in(@tweet1.user)
         # ツイート1に「削除」ボタンがあることを確認する
         expect(
           all(".more")[1].hover
